@@ -1,19 +1,31 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <button onclick="addColor">Click me to Add a color</button>
 </head>
 <body>
     <style>
-
+        html, body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        div {
+            flex: 1;
+            text-align: center;
+        }
     </style>
     
     <script>
-        function addColor(){
+        function addColor() {
             var color = prompt('Enter Color');
-            var div1 = document.createElement('div');
-            div1.style.backgroundColor = color
+            var div1 = document.getElementsByTagName('div');
+            div1.style.backgroundColor = color;
+            document.body.append(div1);
         }
     </script>
+
+   <div>
+    <button onclick="addColor()">Click me to Add a color</button>
+   </div> 
 </body>
 </html>
